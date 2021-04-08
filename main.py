@@ -6,7 +6,7 @@ dp = updater.dispatcher
 
 dp.add_handler(CommandHandler('start', mdl.start, run_async=True))
 
-# dp.add_handler(CommandHandler('find_medicine', mdl.find_medicine, run_async=True))
+
 
 dp.add_handler(CallbackQueryHandler(pattern='find_medicine', callback=mdl.find_med, run_async=True))
 
@@ -21,7 +21,7 @@ for i in ["Sputnik", "Vaxzevria"]:
     dp.add_handler(CallbackQueryHandler(pattern=i, callback=mdl.vaccine, run_async=True))
 
 dp.add_handler(CallbackQueryHandler(pattern='back', callback=mdl.step_back, run_async=True))
-dp.add_handler(MessageHandler(Filters.sticker, mdl.get_sticker, run_async=True))
+
 dp.add_handler(MessageHandler(Filters.text, mdl.answer, run_async=True))
 
 updater.start_polling()
