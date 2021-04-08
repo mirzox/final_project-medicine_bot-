@@ -79,14 +79,6 @@ def answer(update, context):
         pass
 
 
-# def find_medicine(update, context):
-#     user_id = update.message.chat_id
-#     first_name = update.message.chat.first_name
-#     context.bot.send_chat_action(user_id, CHATACTION_TYPING)
-#     DB.update_user(user_id, 'stage', 0)
-#     context.bot.send_message(user_id, msg.choice_med.format(first_name), reply_markup=mrk.remove())
-
-
 def covid(update, context):
     user_id = update.callback_query.message.chat_id
     msg_id = update.callback_query.message.message_id
@@ -161,5 +153,3 @@ def vaccine(update, context):
                                       reply_markup=mrk.vaccine(2))
 
 
-def get_sticker(update, context):
-    print(update.message)
